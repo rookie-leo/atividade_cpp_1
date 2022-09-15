@@ -35,5 +35,5 @@
 </p>
 
 <h3>Importante</h3>
-Sinta-se a vontade para modificar o código e corrigir o ponto no qual ele fica validando e retornando um bool para cada letra das palvras.<br>
+Sinta-se a vontade para modificar o código.<br>
 Sempre faça um pull antes de modificar, pois posso ter mexido no em alguma parte desse repo.
