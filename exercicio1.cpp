@@ -1,18 +1,22 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 string txt1;
 string txt2;
+vector<char> letras_comum;
 
-bool letra_existe(char entrada, string txt) {
+void verifica_letra(char entrada, string txt) {
     for (char letra : txt) {
         if (entrada == letra) {
-            return true;
+            letras_comum.push_back(letra);
         }
     }
+}
 
-    return false;
+bool letra_existe(vector<char> letras_comum) {
+    return letras_comum.size() > 0;
 }
 
 int main() {
@@ -23,11 +27,16 @@ int main() {
     cin >> txt2;
 
     for (char entrada : txt1) {
-        if (letra_existe(entrada, txt2)) {
-            cout << "Há letras em comum" <<endl;
-        } else {
-            cout << "Não há letras em comum" <<endl;
+        verifica_letra(entrada, txt2);
+    }
+
+    if (letra_existe(letras_comum)) {
+        cout << "Há letras em comum" <<endl;
+        for (char l : letras_comum) {
+            cout << l << " - ";
         }
+    } else {
+        cout << "Não há letras em comum" <<endl;
     }
 
 }
